@@ -1,10 +1,5 @@
 # wpfollow
-
 <br>
-<br>
-<br>
-<br>
-
 === wpfollow ===
 Contributors: MiSaCo. <br>
 Tags: Follow , follow us , social media , social icon , social network <br>
