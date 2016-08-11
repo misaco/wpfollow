@@ -40,7 +40,7 @@ function wpfollow_setting() {
             var maxField = 10; //Input fields increment limitation
             var addButton = $('.add_button'); //Add button selector
             var wrapper = $('.field_wrapper'); //Input field wrapper
-            var fieldHTML = '<div><input type="text" name="field_name[]" value=""/><a href="javascript:void(0);" class="remove_button" title="Remove field"><img src="remove-icon.png"/></a></div>'; //New input field html
+            var fieldHTML = '<div><input type="text" name="field_name[]" value=""/><a href="javascript:void(0);" class="remove_button" title="Remove field"><img src="/assets/img/remove-icon.png"/></a></div>'; //New input field html
             var x = 1; //Initial field counter is 1
             $(addButton).click(function(){ //Once add button is clicked
                 if(x < maxField){ //Check maximum number of input fields
@@ -59,7 +59,8 @@ function wpfollow_setting() {
     <div class="field_wrapper">
         <div>
             <input type="text" name="field_name[]" value=""/>
-            <a href="javascript:void(0);" class="add_button" title="Add field"><img src="<?php echo plugins_url( '../img/add-icon-wpfollow.png', __FILE__ ) ?>"/></a>
+            <a href="javascript:void(0);" class="add_button" title="Add field">
+            <img src="<?php echo wpfollow__PLUGIN_URL.'assets/img/add-icon-wpfollow.png' ?>"/></a>
         </div>
     </div>
 
