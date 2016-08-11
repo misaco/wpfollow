@@ -35,28 +35,6 @@ function wpfollow_setting() {
 
 	</script>
 
-	<?php
-	echo '<div>hello world</div>';
-}
-
-
-
-add_action('admin_menu', 'wpfollowurls_submenu_page');
-function wpfollowurls_submenu_page() {
-    add_submenu_page(
-        'wpfollow_setting',
-        'wpfollowu urls',
-        'wpfollowu urls',
-        'manage_options',
-        'wpfollow_settings',
-        'wpfollow_submenu_page_callback' );
-}
-
-
-
-function wpfollow_submenu_page_callback(){
-?>
-
     <script type="text/javascript">
         jQuery(document).ready(function($){
             var maxField = 10; //Input fields increment limitation
@@ -81,8 +59,13 @@ function wpfollow_submenu_page_callback(){
     <div class="field_wrapper">
         <div>
             <input type="text" name="field_name[]" value=""/>
-            <a href="javascript:void(0);" class="add_button" title="Add field"><img src="add-icon.png"/></a>
+            <a href="javascript:void(0);" class="add_button" title="Add field"><img src="<?php echo plugins_url( '../img/add-icon-wpfollow.png', __FILE__ ) ?>"/></a>
         </div>
     </div>
 
-<?php } ?>
+
+	<?php
+	echo '<div>hello world</div>';
+}
+
+
