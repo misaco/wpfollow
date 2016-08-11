@@ -1,6 +1,6 @@
 # wpfollow
 <br>
-=== wpfollow ===
+=== wpfollow === <br>
 Contributors: MiSaCo. <br>
 Tags: Follow , follow us , social media , social icon , social network <br>
 Requires at least: 3.9 <br>
