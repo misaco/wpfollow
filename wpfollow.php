@@ -10,6 +10,8 @@ Author URI: http://misaco.ir
 Text Domain: wpfollow
 */
 
+define('wpfollow_Version' , '0.0.1');
+
 require_once('include.php');
 
 
