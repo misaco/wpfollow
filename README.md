@@ -4,7 +4,7 @@
 
 
 
-=== Akismet ===
+=== wpfollow ===
 Contributors: MiSaCo.
 Tags: Follow , follow us , social media , social icon , social network
 Requires at least: 3.9
