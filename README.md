@@ -20,5 +20,5 @@ Upload the wpfollow plugin to your blog, Activate it, then added to admin panel.
 <br>
 == Changelog ==
 <br>
-= 0.0.1 =
+= 0.1.0 =
 *Release Date - *
