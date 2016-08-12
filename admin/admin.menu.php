@@ -42,65 +42,81 @@ function wpfollow_setting() {
 
                 e.preventDefault();
             });
+
+            jQuery('.legend img').click(function(){
+                jQuery('.more-detail').css('left','-340px').toggle(500);
+                jQuery('.more-detail').css('display','block').slideLeft(500);
+            });
         });
     </script>
 
 
 
-<div class="mother-of-base">
+    <div class="mother-of-base">
 
 
-    <div class="header-of-wpfollow"> 
+        <div class="header-of-wpfollow"> 
 
-        <div class="right">
-            Welcome To wpfollow
-        </div>
+            <div class="right">
+                Welcome To wpfollow
+            </div>
 
-        <div class="left">
-            <div>    
-                Version <?php echo wpfollow_Version; ?>
+            <div class="left">
+                <div>    
+                    Version <?php echo wpfollow_Version; ?>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="tabs">
-        <ul class="tab-links">
-            <li class="active"><a href="#tab1">Tab #1</a></li>
-            <li><a href="#tab2">Tab #2</a></li>
-            <li><a href="#tab3">Tab #3</a></li>
-            <li><a href="#tab4">Tab #4</a></li>
-        </ul>
+        <div class="tabs">
+            <ul class="tab-links">
+                <li class="active"><a href="#tab1">Home</a></li>
+                <li><a href="#tab2">About</a></li>
+            </ul>
 
-        <div class="tab-content">
-            <div id="tab1" class="tab active">
-                <p>Tab #1 content goes here!</p>
-                <p>Donec pulvinar neque sed semper lacinia. Curabitur lacinia ullamcorper nibh; quis imperdiet velit eleifend ac. Donec blandit mauris eget aliquet lacinia! Donec pulvinar massa interdum risus ornare mollis.</p>
-            </div>
+            <div class="tab-content">
 
-            <div id="tab2" class="tab">
-                <p>Tab #2 content goes here!</p>
-                <p>Donec pulvinar neque sed semper lacinia. Curabitur lacinia ullamcorper nibh; quis imperdiet velit eleifend ac. Donec blandit mauris eget aliquet lacinia! Donec pulvinar massa interdum risus ornare mollis. In hac habitasse platea dictumst. Ut euismod tempus hendrerit. Morbi ut adipiscing nisi. Etiam rutrum sodales gravida! Aliquam tellus orci, iaculis vel.</p>
-            </div>
+                <div id="tab1" class="tab active">
 
-            <div id="tab3" class="tab">
-                <p>Tab #3 content goes here!</p>
-                <p>Donec pulvinar neque sed semper lacinia. Curabitur lacinia ullamcorper nibh; quis imperdiet velit eleifend ac. Donec blandit mauris eget aliquet lacinia! Donec pulvinar massa interdum ri.</p>
-            </div>
+                    every thing we need , goes here...
+                </div>
 
-            <div id="tab4" class="tab">
-                <p>Tab #4 content goes here!</p>
-                <p>Donec pulvinar neque sed semper lacinia. Curabitur lacinia ullamcorper nibh; quis imperdiet velit eleifend ac. Donec blandit mauris eget aliquet lacinia! Donec pulvinar massa interdum risus ornare mollis. In hac habitasse platea dictumst. Ut euismod tempus hendrerit. Morbi ut adipiscing nisi. Etiam rutrum sodales gravida! Aliquam tellus orci, iaculis vel.</p>
+                <div id="tab2" class="tab">
+
+                    <div class="about-us">
+                        <div class="description">
+                            This plugin is free you can use it for ever. <br>
+                            <b> Authors: </b> <a href="http://misaco.ir">MiSaCo. </a> <br>
+                            <b> Version: </b> <?php echo wpfollow_Version; ?> <br>
+                            <b>  This version is proudly dedicated to : </b> <?php echo wpfollow_CodeName ?> <br>
+
+                        </div>
+                        <div class="legend">
+                            <img src="<?php echo wpfollow__PLUGIN_URL.'assets/img/eric_clapton.jpg' ?>" /> 
+
+                            <span class="more-detail">
+                                Eric Patrick Clapton, CBE, is an English rock and blues guitarist, singer, and songwriter. He is the only three-time inductee to the Rock and Roll Hall of Fame: once as a solo artist and separately as a member of the Yardbirds and Cream. Wikipedia... <br>
+                                <br>
+
+                                Spouse: Melia McEnery (m. 2002), Pattie Boyd (m. 1979–1988) <br>
+                                Music groups: Cream, The Yardbirds (1963 – 1965), more <br>
+                                Influenced by: Jimi Hendrix, B.B. King, Robert Johnson, Muddy Waters, Delaney Bramlett
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
         </div>
+        <div class="copyright">
+            Created With &#10084; By <a href="http://misaco.ir">MiSaCo. </a>
+        </div>
+
+
+
+
+
     </div>
-    <div class="copyright">
-        Created With &#10084; By <a href="http://misaco.ir">MiSaCo. </a>
-    </div>
-
-
-
-
-
-</div>
 
 
 
@@ -121,8 +137,8 @@ function wpfollow_setting() {
 
 
 
-<script type="text/javascript">
-    jQuery(document).ready(function($){
+    <script type="text/javascript">
+        jQuery(document).ready(function($){
             var maxField = 10; //Input fields increment limitation
             var addButton = $('.add_button'); //Add button selector
             var wrapper = $('.field_wrapper'); //Input field wrapper
@@ -140,11 +156,11 @@ function wpfollow_setting() {
                 x--; //Decrement field counter
             });
         });
-</script>
+    </script>
 
 
 
-<?php
+    <?php
 
 }
 

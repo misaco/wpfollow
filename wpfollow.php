@@ -11,7 +11,7 @@ Text Domain: wpfollow
 */
 
 define('wpfollow_Version' , '0.0.4');
-
+define('wpfollow_CodeName', ' Eric Clapton');
 require_once('include.php');
 
 
