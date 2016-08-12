@@ -26,18 +26,18 @@ function wpfollow_setting() {
     ?>
 
 
-
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 
     <script>
         jQuery(document).ready(function() {
             jQuery('.tabs .tab-links a').on('click', function(e)  {
                 var currentAttrValue = jQuery(this).attr('href');
 
-        // Show/Hide Tabs
+                 // Show/Hide Tabs
                 jQuery('.tabs ' + currentAttrValue).show().siblings().slideUp(400);
                 jQuery('.tabs' + currentAttrValue).delay(400).slideDown(400);
 
-        // Change/remove current tab to active
+                 // Change/remove current tab to active
                 jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
 
                 e.preventDefault();
@@ -47,8 +47,32 @@ function wpfollow_setting() {
                 jQuery('.more-detail').css('left','-340px').toggle(500);
                 jQuery('.more-detail').css('display','block').slideLeft(500);
             });
+
+            // Made posible to draggble and move element 
+            jQuery( ".social-bar" ).sortable();
+            jQuery( ".social-bar" ).disableSelection();
+
+
+
+            // Made to add new elemet and also can remove element
+            var newelement = '<li><ul class="social-bar-add"><li><input type="text" placeholder="Name"></li><li><img src="" alt="social-icon" /></li><li><input type="text" placeholder="Link"></li></ul><div class="remove-element"><a href="javascript:void(0)">remove</a></div></li>';
+
+            jQuery('.add-new-element a').click(function(){
+                jQuery('.social-bar').append(newelement);
+
+            });
+
+
+
+            jQuery('.remove-element a').click(function(event) {
+                event.preventDefault();
+                console.log('heloo');
+                jQuery(this).parent().remove();
+            })
         });
     </script>
+
+
 
 
 
@@ -58,16 +82,16 @@ function wpfollow_setting() {
         <div class="header-of-wpfollow"> 
 
             <div class="right">
-             <?php echo __('Welcome To ','wpfollow'); ?> wpfollow
-         </div>
+               <?php echo __('Welcome To ','wpfollow'); ?> wpfollow
+           </div>
 
-         <div class="left">
+           <div class="left">
             <div>    
-             <?php echo __('Version','wpfollow'); ?>  <?php echo wpfollow_Version; ?>
-         </div>
-     </div>
- </div>
- <div class="tabs">
+               <?php echo __('Version','wpfollow'); ?>  <?php echo wpfollow_Version; ?>
+           </div>
+       </div>
+   </div>
+   <div class="tabs">
     <ul class="tab-links">
         <li class="active"><a href="#tab0">0</a></li>
         <li><a href="#tab1"><?php echo __('Home' ,'wpfollow'); ?></a></li>
@@ -76,10 +100,38 @@ function wpfollow_setting() {
 
     <div class="tab-content">
         <div id='tab0' class="tab active">
-            <div class="social-list">
+            <form>
+                <div class="social-list">
 
+                    <ul class="title-bar"> 
+                        <li>Name</li>
+                        <li>icon</li>
+                        <li>link</li>            
+                    </ul>
 
-            </div>
+                    <ul class="social-bar">
+                        <li>
+                            <ul class="social-bar-add">
+                                <li>
+                                    <input type="text" placeholder="Name">
+                                </li>
+                                <li>
+                                    <img src="" alt="social-icon" />
+                                </li>
+                                <li>
+                                    <input type="text" placeholder="Link">
+                                </li>
+                            </ul>
+                            <div class="remove-element"><a href="javascript:void(0)">Remove</a></div>
+                        </li>
+                    </ul>
+                    <div class="add-new-element"><a href="javascript:void(0);" >Add new </a></div>
+
+                </div>
+                <div>
+                    <?php submit_button(); ?>
+                </div>
+            </form>
         </div>
         <div id="tab1" class="tab">
 
@@ -90,13 +142,13 @@ function wpfollow_setting() {
 
             <div class="about-us">
                 <div class="description">
-                 <?php echo __('This plugin is free you can use it for ever.','wpfollow'); ?> <br>
-                 <b><?php echo __('Authors','wpfollow'); ?>: </b> <a href="http://misaco.ir">MiSaCo. </a> <br>
-                 <b><?php echo __(' Version','wpfollow'); ?>: </b> <?php echo wpfollow_Version; ?> <br>
-                 <b><?php echo __('This version is proudly dedicated to','wpfollow'); ?>:</b> <?php echo wpfollow_CodeName ?> <br>
+                   <?php echo __('This plugin is free you can use it for ever.','wpfollow'); ?> <br>
+                   <b><?php echo __('Authors','wpfollow'); ?>: </b> <a href="http://misaco.ir">MiSaCo. </a> <br>
+                   <b><?php echo __(' Version','wpfollow'); ?>: </b> <?php echo wpfollow_Version; ?> <br>
+                   <b><?php echo __('This version is proudly dedicated to','wpfollow'); ?>:</b> <?php echo wpfollow_CodeName ?> <br>
 
-             </div>
-             <div class="legend">
+               </div>
+               <div class="legend">
                 <img src="<?php echo wpfollow__PLUGIN_URL.'assets/img/eric_clapton.jpg' ?>" /> 
 
                 <span class="more-detail">
@@ -115,65 +167,16 @@ function wpfollow_setting() {
 </div>
 </div>
 <div class="copyright">
- <?php echo __('Created With','wpfollow'); ?> &#10084; <?php echo __('By','wpfollow'); ?> <a href="http://misaco.ir">MiSaCo. </a>
+   <?php echo __('Created With','wpfollow'); ?> &#10084; <?php echo __('By','wpfollow'); ?> <a href="http://misaco.ir">MiSaCo. </a>
+</div>
+
+
 </div>
 
 
 
 
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script type="text/javascript">
-    jQuery(document).ready(function($){
-            var maxField = 10; //Input fields increment limitation
-            var addButton = $('.add_button'); //Add button selector
-            var wrapper = $('.field_wrapper'); //Input field wrapper
-            var fieldHTML = '<div><input type="text" name="field_name[]" value=""/><a href="javascript:void(0);" class="remove_button" title="Remove field"><img alt="remove" src="/assets/img/remove-icon.png"/></a></div>'; //New input field html
-            var x = 1; //Initial field counter is 1
-            $(addButton).click(function(){ //Once add button is clicked
-                if(x < maxField){ //Check maximum number of input fields
-                    x++; //Increment field counter
-                    $(wrapper).append(fieldHTML); // Add field html
-                }
-            });
-            $(wrapper).on('click', '.remove_button', function(e){ //Once remove button is clicked
-                e.preventDefault();
-                $(this).parent('div').remove(); //Remove field html
-                x--; //Decrement field counter
-            });
-        });
-</script>
-
-<div class="field_wrapper">
-  <div>
-      <input type="text" name="field_name[]" value=""/>
-      <a href="javascript:void(0);" class="add_button" title="Add field"><img src="<?php echo plugins_url( '../img/add-icon-wpfollow.png', __FILE__ ) ?>"/></a>
-      <a href="javascript:void(0);" class="add_button" title="Add field">
-          <img alt="add" src="<?php echo wpfollow__PLUGIN_URL.'assets/img/add-icon-wpfollow.png' ?>"/></a>
-      </div>
-  </div>
-
-  <?php
+<?php
 
 }
 

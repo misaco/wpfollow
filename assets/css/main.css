@@ -149,8 +149,8 @@ li.active a, li.active a:hover {
     position: relative;
 }
 .legend img {
-   width: 100%;
-   border-radius: 10px;
+ width: 100%;
+ border-radius: 10px;
 }
 
 
@@ -176,5 +176,73 @@ li.active a, li.active a:hover {
 
 
 .social-list {
+    position: relative;
+}
+
+.social-list .title-bar {
+    list-style: none;
+    width: 100%;
+    display: inline-block;
+}
+
+.social-list .title-bar li {
+    width: 33%;
+    float: left;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid rgba(158, 158, 158, 0.42);
+    font-size: 16px;
+    padding: 5px 0px;
+    background-color: rgba(158, 158, 158, 0.08);
+    font-weight: bold;
+}
+
+.social-list .social-bar-add {
+    list-style: none;
+    width: 100%;
+    display: inline-block;
+
+}
+.social-list .social-bar-add  li{
+    width: 33%;
+    float: left;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid rgba(158, 158, 158, 0.42);
+    font-size: 16px;
+    padding: 10px 0px 8px;
+    background-color: rgba(96, 125, 139, 0.17);
+    font-weight: bold;
+    height: 33px;
+}
+.social-bar {
+    position: relative;
+}
+.social-bar li {
+    position: relative;
+}
+
+.remove-element a{
+    position: absolute;
+    right: -71px;
+    bottom: 10px;
+    background-color: #F44336;
+    padding: 3px 18px;
+    color: white;
+    font-weight: bold;
+}
+.add-new-element a{
+    position: absolute;
+    right: -71px;
+    bottom: 39px;
+    background-color: #4CAF50;
+    padding: 3px 14px;
+    color: white;
+    font-weight: bold;
+
+}
+.social-list .social-bar-add  li input[type='text']{
+    padding: 4px 6px;
+    width: 94%;
 
 }
