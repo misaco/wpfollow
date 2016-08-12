@@ -26,8 +26,6 @@ function wpfollow_setting() {
     ?>
 
 
-    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
-
     <script>
         jQuery(document).ready(function() {
             jQuery('.tabs .tab-links a').on('click', function(e)  {
@@ -68,7 +66,7 @@ function wpfollow_setting() {
                 event.preventDefault();
                 console.log('heloo');
                 jQuery(this).parent().remove();
-            })
+            });
         });
     </script>
 

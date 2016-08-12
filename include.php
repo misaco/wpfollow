@@ -14,11 +14,19 @@ define( 'wpfollow__PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
  * Include CSS files.
  */
 function wpfollow_css() {
-    wp_register_style( 'wpfollowcss',  plugin_dir_url( __FILE__ ) . '/assets/css/main.css' );
-    wp_enqueue_style( 'wpfollowcss' );
+	wp_register_style( 'wpfollowcss',  plugin_dir_url( __FILE__ ) . '/assets/css/main.css' );
+	wp_enqueue_style( 'wpfollowcss' );
+
+
 }
 add_action( 'admin_init', 'wpfollow_css' );
 
+function load_custom_scripts() {
+	wp_register_script('my-jquery-ui', 'https://code.jquery.com/ui/1.12.0/jquery-ui.js');
+	wp_enqueue_script( 'my-jquery-ui' );
+}
+
+add_action('admin_init', 'load_custom_scripts');
 
 
 require_once('admin/admin.menu.php');
