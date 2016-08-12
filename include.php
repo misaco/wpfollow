@@ -21,9 +21,12 @@ function wpfollow_css() {
 }
 add_action( 'admin_init', 'wpfollow_css' );
 
+/**
+ * Include JS Files.
+ */
 function load_custom_scripts() {
-	wp_register_script('my-jquery-ui', 'https://code.jquery.com/ui/1.12.0/jquery-ui.js');
-	wp_enqueue_script( 'my-jquery-ui' );
+	wp_register_script('mainjs', plugin_dir_url(__FILE__) . '/assets/js/main.js' , array('jquery', 'jquery-ui-core' , 'jquery-ui-sortable'));
+	wp_enqueue_script( 'mainjs' );
 }
 
 add_action('admin_init', 'load_custom_scripts');
