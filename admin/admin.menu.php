@@ -43,7 +43,7 @@ function wpfollow_setting() {
 
             jQuery('.legend img').click(function(){
                 jQuery('.more-detail').css('left','-340px').toggle(500);
-                jQuery('.more-detail').css('display','block').slideLeft(500);
+               /* jQuery('.more-detail').css('display','block').toggle(500);*/
             });
 
             // Made posible to draggble and move element 
@@ -62,11 +62,11 @@ function wpfollow_setting() {
 
 
 
-            jQuery('.remove-element a').click(function(event) {
+/*            jQuery('.remove-element a').click(function(event) {
                 event.preventDefault();
                 console.log('heloo');
                 jQuery(this).parent().remove();
-            });
+            });*/
         });
     </script>
 
