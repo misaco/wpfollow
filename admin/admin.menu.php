@@ -34,10 +34,10 @@ function wpfollow_setting() {
  </div>
  <div class="tabs">
   <ul class="tab-links">
-    <li><a href="#tab0">0</a></li>
-    <li class="active"><a href="#tab1">1</a></li>
-    <li><a href="#tab1"><?php echo __('Home' ,'wpfollow'); ?></a></li>
-    <li><a href="#tab2"><?php echo  __('About' ,'wpfollow') ?></a></li>
+    <li class="active"><a href="#tab1">0</a></li>
+    <li><a href="#tab2">1</a></li>
+    <li><a href="#tab3"><?php echo __('Home' ,'wpfollow'); ?></a></li>
+    <li><a href="#tab4"><?php echo  __('About' ,'wpfollow') ?></a></li>
   </ul>
 
   <?php 
@@ -103,7 +103,7 @@ function wpfollow_setting() {
  ?>
 
  <div class="tab-content">
-  <div id='tab0' class="tab">
+  <div id='tab1' class="tab active">
     <form action="" method="POST">
       <div class="social-list">
 
@@ -156,7 +156,7 @@ function wpfollow_setting() {
 
 
 <!-- Begin Second Tab -->
-<div id='tab1' class="tab active">
+<div id='tab2' class="tab">
   <form method="POST" action="">
     <div class="select-position">
       <div class="position">
@@ -208,12 +208,12 @@ function wpfollow_setting() {
 
 
 
-<div id="tab1" class="tab">
+<div id="tab3" class="tab">
 
   every thing we need , goes here...
 </div>
 
-<div id="tab2" class="tab">
+<div id="tab4" class="tab">
 
   <div class="about-us">
     <div class="description">
