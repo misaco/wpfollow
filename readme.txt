@@ -2,8 +2,8 @@
 Contributors: MiSaCo.
 Tags: Follow , follow us , social media , social icon , social network
 Requires at least: 3.9
-Tested up to: 4.4.1
-Stable tag: 0.1.1
+Tested up to: 4.6.0
+Stable tag: 0.4.0
 License: GPLv2 or later
 
 
@@ -18,5 +18,5 @@ Upload the wpfollow plugin to your blog, Activate it, then added to admin panel.
 
 == Changelog ==
 
-= 0.1.1 =
+= 0.4.0 =
 *Release Date - *

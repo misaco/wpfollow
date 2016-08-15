@@ -17,17 +17,20 @@
                 /* jQuery('.more-detail').css('display','block').toggle(500);*/
             });
 
+
+
             // Made posible to draggble and move element 
-            jQuery( ".social-bar" ).sortable();
-            jQuery( ".social-bar" ).disableSelection();
+            jQuery( ".position ul" ).sortable();
+            jQuery( ".position ul" ).disableSelection();
 
 
 
-            // Made to add new elemet and also can remove element
-            var newelement = '<li><ul class="social-bar-add"><li><input type="text" placeholder="Name"></li><li><img src="" alt="social-icon" /></li><li><input type="text" placeholder="Link"></li></ul><div class="remove-element"><a href="javascript:void(0)">remove</a></div></li>';
+            // Made posible to add new elemet and also can remove element
+            var newelement = '<li><ul class="social-bar-add"><li><input type="text" name="name" placeholder="Name"></li><li><input type="text" name="link" placeholder="Link"></li><li><input  id="image-url" name="image" type="text" value="" placeholder="Image" /></li></ul><div class="remove-element"><a href="javascript:void(0)">Remove</a></div></li>';
 
             jQuery('.add-new-element a').click(function(){
                 jQuery('.social-bar').append(newelement);
+                jQuery('.upload-btn').css('display','block');
 
             });
 
@@ -38,4 +41,81 @@
                 console.log('heloo');
                 jQuery(this).parent().remove();
             });*/
-        });
+
+
+
+    // make add property to social items in list , social_id , social_position , social_state
+    jQuery('.position ul li').mouseout(function(){
+        var count = jQuery('.position ul li').length; 
+        for (var i = 0 ; i < count; i++) {
+            jQuery('.position ul li').eq(i).find('.social_position').attr('value',i);
+            jQuery('.position ul li').eq(i).find('.social_state').attr('value' ,1);
+        }                       
+    });
+    
+
+            // Made Possible to add social to list show
+            jQuery('.select ul li').click(function(){
+
+                jQuery(this).slideUp(500, function(){
+                    jQuery(this).appendTo('.position ul');
+                    jQuery(this).slideDown(500);
+                });
+
+
+
+            });
+
+            function heartbeat() {
+        setTimeout(function(){                //start setTimeout
+            jQuery('.love img').toggleClass('beat');    //add or remove class .beat
+            heartbeat();                      //and call the function again
+        },500);                               //every half second
+    }
+    heartbeat(); 
+
+
+
+
+
+
+
+
+
+    // Made possible use mediauploader 
+    jQuery(document).ready(function($){
+
+      var mediaUploader;
+
+      jQuery('#upload-button').click(function(e) {
+        e.preventDefault();
+    // If the uploader object has already been created, reopen the dialog
+    if (mediaUploader) {
+      mediaUploader.open();
+      return;
+  }
+    // Extend the wp.media object
+    mediaUploader = wp.media.frames.file_frame = wp.media({
+      title: 'Choose Image',
+      button: {
+          text: 'Choose Image'
+      }, multiple: false });
+
+    // When a file is selected, grab the URL and set it as the text field's value
+    mediaUploader.on('select', function() {
+      attachment = mediaUploader.state().get('selection').first().toJSON();
+      $('#image-url').val(attachment.url);
+  });
+    // Open the uploader dialog
+    mediaUploader.open();
+});
+
+  });
+
+
+
+
+
+
+});
+

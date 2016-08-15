@@ -210,7 +210,7 @@ li.active a, li.active a:hover {
     text-align: center;
     border: 1px solid rgba(158, 158, 158, 0.42);
     font-size: 16px;
-    padding: 10px 0px 8px;
+    padding: 1px 0px 10px;
     background-color: rgba(96, 125, 139, 0.17);
     font-weight: bold;
     height: 33px;
@@ -220,21 +220,29 @@ li.active a, li.active a:hover {
 }
 .social-bar li {
     position: relative;
+    cursor: move;
 }
+.social-bar li:hover > .remove-element a {
+    right: -77px;
+    display: inline-block;
+    transition: 1s all;
 
+}
 .remove-element a{
     position: absolute;
-    right: -71px;
-    bottom: 10px;
+    right: 10px;
+    bottom: 22px;
     background-color: #F44336;
     padding: 3px 18px;
     color: white;
     font-weight: bold;
+    display: none;
+    transition: 1s all;
 }
 .add-new-element a{
     position: absolute;
-    right: -71px;
-    bottom: 39px;
+    right: 10px;
+    bottom: -16px;
     background-color: #4CAF50;
     padding: 3px 14px;
     color: white;
@@ -242,7 +250,70 @@ li.active a, li.active a:hover {
 
 }
 .social-list .social-bar-add  li input[type='text']{
-    padding: 4px 6px;
-    width: 94%;
+    padding: 10px 5px;
+    width: 99%;
+}
+.social-bar-add  li img {
+    height: 100%;
+}
 
+
+
+
+
+
+
+.select-position {
+
+}
+.select-position .position {
+    border-bottom: 1px #eee solid;
+    margin: 0px 0px 40px;
+    padding: 10px 0px;
+}
+.select-position .position ul {
+ display: inline-block;
+ margin-top: 10px;
+}
+.select-position .position ul li {    
+    float: left;
+    margin: 0px 9px;
+    width: 72px;
+    height: 72px;
+}
+.select-position .position ul li img {    
+    height: 100%;
+}
+.select-position .select {
+    border-bottom: 1px #eee solid;
+    margin: 0px 0px 40px;
+    padding: 10px 0px;
+
+}
+.select-position .select ul {
+ display: inline-block;
+ margin-top: 10px;
+
+}
+.select-position .select ul li {
+    float: left;
+    margin: 0px 9px;
+    width: 72px;
+    height: 72px;
+}
+.select-position .select ul li img {
+height: 100%;
+}
+
+.upload-btn{
+
+    position: absolute;
+    right: 12px;
+    bottom: 20px;
+    display: none;
+}
+
+
+.beat {
+    transform: scale(1.1);
 }
